@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101827">
+<title>CapMan ERP | Manufacturing Learning System</title>
+<style>
+:root{--bg:#f3f6fb;--panel:#fff;--ink:#172033;--muted:#64748b;--line:#e5eaf2;--nav:#101827;--blue:#2563eb;--green:#15803d;--amber:#b45309;--red:#b91c1c;--shadow:0 8px 24px rgba(15,23,42,.06)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}.app{display:flex;min-height:100vh}.sidebar{width:250px;background:var(--nav);color:#dbe4f0;padding:20px 14px;flex-shrink:0}.brand{font-size:20px;font-weight:800;color:#fff;letter-spacing:.2px;padding:6px 10px}.brand small{display:block;font-size:11px;color:#94a3b8;font-weight:500;margin-top:3px}.navlabel{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:#8290a5;margin:22px 10px 8px}.nav button{display:flex;width:100%;align-items:center;gap:10px;text-align:left;background:transparent;border:0;color:#cbd5e1;padding:10px;border-radius:9px;margin:2px 0}.nav button:hover,.nav button.active{background:#25344a;color:#fff}.nav .ico{width:20px;text-align:center}.sidefoot{font-size:11px;color:#8290a5;margin:28px 10px}.main{min-width:0;flex:1}.topbar{height:66px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 26px;position:sticky;top:0;z-index:3}.topbar strong{font-size:15px}.topright{display:flex;gap:10px;align-items:center;color:var(--muted);font-size:12px}.avatar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#dbeafe;color:#1d4ed8;font-weight:800}.content{padding:25px;max-width:1500px;margin:auto}.pagehead{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:20px}.pagehead h1{font-size:25px;margin:0 0 5px}.sub{color:var(--muted)}.btn{border:0;border-radius:8px;padding:10px 14px;background:var(--blue);color:#fff;font-weight:650}.btn.secondary{background:#eaf0f8;color:#243247}.btn.green{background:var(--green)}.btn.danger{background:#fee2e2;color:#991b1b}.btn.small{padding:7px 10px;font-size:12px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:17px;box-shadow:var(--shadow)}.metric{font-size:27px;font-weight:800;margin:7px 0 2px}.metriclabel{font-size:12px;color:var(--muted)}.metricicon{float:right;font-size:21px}.section{margin-top:20px}.section h2{font-size:16px;margin:0 0 12px}.twocol{display:grid;grid-template-columns:1.25fr 1fr;gap:15px}.tablewrap{overflow:auto;border:1px solid var(--line);border-radius:10px}table{width:100%;border-collapse:collapse;min-width:650px;background:#fff}th,td{padding:11px 12px;border-bottom:1px solid var(--line);text-align:left;font-size:12px;white-space:nowrap}th{background:#f8fafc;color:#526176;font-weight:700}tr:last-child td{border-bottom:0}.pill{display:inline-block;border-radius:20px;padding:3px 8px;font-size:10px;font-weight:750;background:#e2e8f0;color:#334155}.pill.green{background:#dcfce7;color:#166534}.pill.amber{background:#fef3c7;color:#92400e}.pill.red{background:#fee2e2;color:#991b1b}.actions{display:flex;gap:7px;flex-wrap:wrap}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field label{display:block;font-size:12px;color:#526176;font-weight:650;margin-bottom:5px}.field input,.field select{width:100%;padding:10px;border:1px solid #d9e1ec;border-radius:8px;background:#fff;color:var(--ink)}.field.full{grid-column:1/-1}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:13px}.toolbar input,.toolbar select{padding:9px 11px;border:1px solid #d9e1ec;border-radius:8px;background:#fff}.empty{padding:25px;text-align:center;color:var(--muted)}.notice{padding:12px 14px;border-radius:9px;background:#eff6ff;color:#1e40af;font-size:12px;margin-bottom:15px}.warning{background:#fff7ed;color:#9a3412}.modalback{position:fixed;inset:0;background:#0f172a88;display:none;align-items:center;justify-content:center;padding:15px;z-index:10}.modalback.show{display:flex}.modal{width:min(620px,100%);max-height:90vh;overflow:auto;background:#fff;border-radius:14px;padding:20px;box-shadow:0 25px 80px #0004}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.modalhead h2{margin:0;font-size:18px}.close{border:0;background:#eef2f7;border-radius:7px;padding:6px 10px}.formactions{display:flex;justify-content:flex-end;gap:8px;margin-top:17px}.bar{height:8px;border-radius:9px;background:#e8edf5;overflow:hidden}.bar span{display:block;height:100%;background:#2563eb}.deptcards{display:grid;grid-template-columns:1fr 1fr;gap:14px}.dept{padding:17px;border:1px solid var(--line);border-radius:12px;background:#fff}.dept h3{margin:0 0 5px}.dept .count{font-size:25px;font-weight:800}.mobilemenu{display:none}
+@media(max-width:900px){.sidebar{width:210px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.twocol{grid-template-columns:1fr}}
+@media(max-width:650px){.app{display:block}.sidebar{width:100%;padding:10px 12px}.brand{padding:4px 7px}.navlabel,.sidefoot{display:none}.nav{display:flex;overflow:auto;gap:4px;padding-top:8px}.nav button{white-space:nowrap;width:auto;padding:8px 10px;font-size:12px}.topbar{height:52px;padding:0 15px}.content{padding:17px 13px}.pagehead{display:block}.pagehead .btn{margin-top:12px}.grid{gap:9px}.card{padding:13px}.metric{font-size:22px}.deptcards{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand">CAPMAN ERP<small>Manufacturing Learning System</small></div>
+  <div class="navlabel">Workspace</div>
+  <nav class="nav" id="nav">
+    <button class="active" data-page="dashboard"><span class="ico">▦</span> Dashboard</button>
+    <button data-page="machines"><span class="ico">⚙</span> Machine Master</button>
+    <button data-page="materials"><span class="ico">▤</span> Material Master</button>
+    <button data-page="bom"><span class="ico">▧</span> BOM</button>
+    <button data-page="workorders"><span class="ico">▣</span> Work Orders</button>
+    <button data-page="stock"><span class="ico">▥</span> Stock & Transfers</button>
+    <button data-page="production"><span class="ico">▶</span> Production Entry</button>
+    <button data-page="reports"><span class="ico">▥</span> Reports</button>
+  </nav>
+  <div class="sidefoot">Demo mode · Data saved in this browser</div>
+</aside>
+<main class="main">
+  <header class="topbar"><strong id="topTitle">Company Overview</strong><div class="topright"><span>Training Environment</span><span class="avatar">A</span></div></header>
+  <div class="content" id="view"></div>
+</main>
+</div>
+<div class="modalback" id="modalback"><div class="modal"><div class="modalhead"><h2 id="modalTitle">Add</h2><button class="close" onclick="closeModal()">✕</button></div><div id="modalBody"></div></div></div>
+<script>
+const KEY='capman_erp_demo_v1';
+const seed={
+ machines:[
+ ...Array.from({length:20},(_,i)=>({id:'IM-'+String(i+1).padStart(2,'0')+'/26',dept:'Closure',type:'Injection Moulding',capacity:0,status:'Active',cavities:0})),
+ ...Array.from({length:11},(_,i)=>({id:'WD-'+String(i+1).padStart(2,'0')+'/26',dept:'Wadding',type:'Wadding',capacity:0,status:'Active',cavities:0}))
+ ],
+ materials:[
+{code:'RM-H200MA',name:'H200MA',category:'Raw Material',uom:'KG',stock:0,location:'RM Store'},
+ {code:'MB-WHITE',name:'Masterbatch - White',category:'Masterbatch',uom:'KG',stock:0,location:'RM Store'},
+ {code:'MB-RED',name:'Masterbatch - Red',category:'Masterbatch',uom:'KG',stock:0,location:'RM Store'},
+ {code:'SFG-OUTER',name:'Outer Cap',category:'SFG',uom:'PCS',stock:0,location:'SFG Store'},
+ {code:'SFG-INNER',name:'Inner Cap',category:'SFG',uom:'PCS',stock:0,location:'SFG Store'},
+ {code:'WAD-001',name:'Wad',category:'Component',uom:'PCS',stock:0,location:'WIP Store'},
+ {code:'FG-CAP',name:'Finished Cap',category:'Finished Goods',uom:'PCS',stock:0,location:'FG Warehouse'},
+ {code:'PK-PE',name:'Polyethylene Bag',category:'Packing Material',uom:'PCS',stock:0,location:'Packing Store'},
+ {code:'PK-SHIP',name:'Shipper Box',category:'Packing Material',uom:'PCS',stock:0,location:'Packing Store'}
+ ],
+ orders:[],entries:[],transfers:[],bom:[
+ {product:'Outer Cap',stage:'Closure',components:'H200MA + Colour Masterbatch'},
+ {product:'Inner Cap',stage:'Closure',components:'H200MA + Colour Masterbatch'},
+ {product:'Finished Cap',stage:'Wadding',components:'1 Outer + 1 Inner + Wad (assumption)'}
+ ]
+};
+let db=load();
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||structuredClone(seed)}catch(e){return JSON.parse(JSON.stringify(seed))}}
+function save(){localStorage.setItem(KEY,JSON.stringify(db))}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function num(n){return Number(n||0).toLocaleString('en-IN')}
+function setPage(p){document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===p));render(p)}
+document.getElementById('nav').addEventListener('click',e=>{let b=e.target.closest('button[data-page]');if(b)setPage(b.dataset.page)});
+function title(t){document.getElementById('topTitle').textContent=t}
+function head(t,s,btn=''){return `<div class="pagehead"><div><h1>${t}</h1><div class="sub">${s}</div></div>${btn}</div>`}
+function metric(label,value,icon,sub=''){return `<div class="card"><span class="metricicon">${icon}</span><div class="metriclabel">${label}</div><div class="metric">${value}</div><div class="metriclabel">${sub}</div></div>`}
+function pill(s){let c=s==='Active'||s==='Completed'||s==='Posted'?'green':s==='Breakdown'||s==='Rejected'?'red':'amber';return `<span class="pill ${c}">${esc(s)}</span>`}
+function render(p='dashboard'){
+ const v=document.getElementById('view');
+ if(p==='dashboard'){
+ title('Company Overview');
+ const rm=db.materials.filter(x=>x.category==='Raw Material'||x.category==='Masterbatch').reduce((a,x)=>a+x.stock,0);
+ const sfg=db.materials.filter(x=>x.category==='SFG').reduce((a,x)=>a+x.stock,0);
+ const fg=db.materials.filter(x=>x.category==='Finished Goods').reduce((a,x)=>a+x.stock,0);
+ const running=db.machines.filter(x=>x.status==='Active').length;
+ v.innerHTML=head('Manufacturing Dashboard','Closure → SFG → Wadding → Finished Goods')+
+ `<div class="notice">Demo training environment: transactions are stored in this browser only. Firebase multi-user sync and secure owner login will be connected in the next development phase.</div>
+ <div class="grid">${metric('Total Machines',db.machines.length,'⚙','20 Closure · 11 Wadding')}${metric('Active Machines',running,'🟢','Machine master status')}${metric('Raw Material Stock',num(rm),'▤','KG')}${metric('SFG Stock',num(sfg),'▧','Outer + Inner caps')}${metric('Finished Goods',num(fg),'📦','PCS')}${metric('Open Work Orders',db.orders.filter(o=>o.status!=='Completed').length,'▣','Pending / In progress')}${metric('Production Entries',db.entries.length,'▶','Posted entries')}${metric('Stock Transfers',db.transfers.length,'⇄','Recorded movements')}</div>
+ <div class="section deptcards"><div class="dept"><h3>Closure Department</h3><div class="count">20 Machines</div><div class="sub">IM-01/26 to IM-20/26</div><div class="bar" style="margin-top:12px"><span style="width:100%"></span></div></div><div class="dept"><h3>Wadding Department</h3><div class="count">11 Machines</div><div class="sub">WD-01/26 to WD-11/26</div><div class="bar" style="margin-top:12px"><span style="width:100%"></span></div></div></div>
+ <div class="section twocol"><div class="card"><h2>Recent Production Entries</h2>${db.entries.length?table(['Date','Department','Machine','Good Qty','Reject'],db.entries.slice(-5).reverse().map(x=>[x.date,x.dept,x.machine,num(x.good),num(x.reject)])):'<div class="empty">No production entries yet.</div>'}</div><div class="card"><h2>Learning Workflow</h2><ol class="sub"><li>Create / review material master</li><li>Define BOM and work order</li><li>Transfer materials to WIP</li><li>Post machine-wise production</li><li>Receive SFG / FG into stock</li></ol></div></div>`;
+ } else if(p==='machines'){
+ title('Machine Master');v.innerHTML=head('Machine Master','Manage machine IDs, departments, capacity and status.','<button class="btn" onclick="addMachine()">＋ Add Machine</button>')+
+ `<div class="notice">Preloaded machine IDs: Closure IM-01/26 to IM-20/26 · Wadding WD-01/26 to WD-11/26. Capacity and cavity values are intentionally blank until you provide actual data.</div><div class="toolbar"><input id="machineSearch" placeholder="Search machine..." oninput="filterTable('machineTable',this.value)"><select id="deptFilter" onchange="filterDept(this.value)"><option value="">All departments</option><option>Closure</option><option>Wadding</option></select></div><div class="tablewrap" id="machineTable">${table(['Machine ID','Department','Type','Capacity / Shift','Cavities','Status','Actions'],db.machines.map((m,i)=>[m.id,m.dept,m.type,m.capacity||'—',m.cavities||'—',pill(m.status),`<button class="btn secondary small" onclick="editMachine(${i})">Edit</button>`]))}</div>`;
+ } else if(p==='materials'){
+ title('Material Master');v.innerHTML=head('Material Master','Raw materials, masterbatch, SFG, components, FG and packing materials.','<button class="btn" onclick="addMaterial()">＋ Add Material</button>')+
+ `<div class="notice">Opening balances are set to zero in this demo. Enter actual stock only after confirming your company’s units and stock locations.</div><div class="toolbar"><input placeholder="Search material..." oninput="filterTable('materialTable',this.value)"></div><div class="tablewrap" id="materialTable">${table(['Code','Material','Category','UOM','Stock','Location','Action'],db.materials.map((m,i)=>[m.code,m.name,m.category,m.uom,num(m.stock),m.location,`<button class="btn secondary small" onclick="editMaterial(${i})">Edit</button>`]))}</div>`;
+ } else if(p==='bom'){
+ title('Bill of Materials');v.innerHTML=head('Bill of Materials','Define component requirements for each manufacturing stage.','<button class="btn" onclick="addBom()">＋ Add BOM</button>')+
+ `<div class="notice warning">Initial training assumption: one finished cap uses 1 Outer Cap + 1 Inner Cap + 1 Wad. Confirm the actual wad specification, scrap allowance and BOM quantities before using this for calculations.</div><div class="tablewrap">${table(['Finished Product','Stage','Components'],db.bom.map(b=>[b.product,b.stage,b.components]))}</div>`;
+ } else if(p==='workorders'){
+ title('Work Orders');v.innerHTML=head('Work Orders','Create production orders for Closure SFG or Wadding finished caps.','<button class="btn" onclick="addOrder()">＋ Create Work Order</button>')+
+ `<div class="notice">Work Order links product, planned quantity, department, due date and machine. Material issue and production posting will reference this order.</div>${db.orders.length?`<div class="tablewrap">${table(['WO Number','Product','Department','Planned Qty','Due Date','Status','Action'],db.orders.map((o,i)=>[o.id,o.product,o.dept,num(o.qty),o.due,pill(o.status),`<button class="btn secondary small" onclick="viewOrder(${i})">View</button>`]))}</div>`:'<div class="card empty">No work orders created yet. Create your first training work order.</div>'}`;
+ } else if(p==='stock'){
+ title('Stock & Transfers');v.innerHTML=head('Stock & Transfers','Record goods receipt and material movement between stores.','<button class="btn" onclick="addTransfer()">＋ New Stock Transaction</button>')+
+ `<div class="notice">Use this screen to simulate RM Store → WIP Store → SFG Store → FG Warehouse. Every transaction creates a stock ledger entry.</div><div class="tablewrap">${table(['Material','Category','Available Qty','UOM','Location'],db.materials.map(m=>[m.name,m.category,num(m.stock),m.uom,m.location]))}</div><div class="section card"><h2>Recent stock movements</h2>${db.transfers.length?table(['Date','Material','From','To','Qty','Reference'],db.transfers.slice().reverse().map(t=>[t.date,t.material,t.from,t.to,num(t.qty),t.ref])):'<div class="empty">No stock movements recorded.</div>'}</div>`;
+ } else if(p==='production'){
+ title('Production Entry');v.innerHTML=head('Machine-wise Production Entry','Post shift output, rejection and good quantity against a Work Order.','<button class="btn" onclick="addProduction()">＋ Post Production</button>')+
+ `<div class="notice warning">Good Qty = Total Output − Rejection. Material consumption must be recorded against BOM / actual issue; rejection does not automatically issue material twice.</div>${db.entries.length?`<div class="tablewrap">${table(['Date','WO','Department','Machine','Shift','Output','Reject','Good','Reason'],db.entries.slice().reverse().map(e=>[e.date,e.wo,e.dept,e.machine,e.shift,num(e.output),num(e.reject),num(e.good),e.reason||'—']))}</div>`:'<div class="card empty">No production entries yet.</div>'}`;
+ } else if(p==='reports'){
+ title('Reports');let totalOut=db.entries.reduce((a,e)=>a+e.output,0),totalRej=db.entries.reduce((a,e)=>a+e.reject,0),totalGood=db.entries.reduce((a,e)=>a+e.good,0);
+ v.innerHTML=head('Production Reports','Training summaries from recorded transactions.')+
+ `<div class="grid">${metric('Total Output',num(totalOut),'▶','PCS')}${metric('Total Rejection',num(totalRej),'⚠','PCS')}${metric('Good Production',num(totalGood),'✓','PCS')}${metric('Rejection %',totalOut?(totalRej/totalOut*100).toFixed(2)+'%':'0%','%','Based on posted entries')}</div><div class="section card"><h2>Department-wise summary</h2>${table(['Department','Output','Rejection','Good Qty'],['Closure','Wadding'].map(d=>{let a=db.entries.filter(e=>e.dept===d);return[d,num(a.reduce((s,x)=>s+x.output,0)),num(a.reduce((s,x)=>s+x.reject,0)),num(a.reduce((s,x)=>s+x.good,0))]}))}</div><div class="section"><button class="btn secondary" onclick="exportData()">Export demo data (JSON)</button> <button class="btn danger" onclick="resetDemo()">Reset demo data</button></div>`;
+ }
+}
+  function table(headers,rows){return `<table><thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.length?rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join(''):`<tr><td colspan="${headers.length}" class="empty">No records</td></tr>`}</tbody></table>`}
+function openModal(t,body){document.getElementById('modalTitle').textContent=t;document.getElementById('modalBody').innerHTML=body;document.getElementById('modalback').classList.add('show')}
+function closeModal(){document.getElementById('modalback').classList.remove('show')}
+function field(label,name,value='',type='text',opts=null){return `<div class="field"><label>${label}</label>${opts?`<select name="${name}">${opts.map(o=>`<option ${o===value?'selected':''}>${o}</option>`).join('')}</select>`:`<input name="${name}" type="${type}" value="${esc(value)}" ${type==='number'?'min="0" step="any"':''} required>`}</div>`}
+function form(fields,submit){return `<form onsubmit="return ${submit}"><div class="formgrid">${fields}</div><div class="formactions"><button type="button" class="btn secondary" onclick="closeModal()">Cancel</button><button class="btn">Save</button></div></form>`}
+function addMachine(){openModal('Add Machine',form(field('Machine ID','id')+field('Department','dept','Closure','text',['Closure','Wadding'])+field('Machine Type','type','Injection Moulding')+field('Capacity per shift (PCS)','capacity','0','number')+field('Cavities','cavities','0','number')+field('Status','status','Active','text',['Active','Idle','Breakdown','Maintenance']),'saveMachine(event)'))}
+function editMachine(i){let m=db.machines[i];openModal('Edit '+m.id,form(field('Machine ID','id',m.id)+field('Department','dept',m.dept,'text',['Closure','Wadding'])+field('Machine Type','type',m.type)+field('Capacity per shift (PCS)','capacity',m.capacity,'number')+field('Cavities','cavities',m.cavities,'number')+field('Status','status',m.status,'text',['Active','Idle','Breakdown','Maintenance']),'saveMachine(event,'+i+')'))}
+function saveMachine(e,i){e.preventDefault();let f=Object.fromEntries(new FormData(e.target));f.capacity=+f.capacity;f.cavities=+f.cavities;if(i===undefined){if(db.machines.some(m=>m.id===f.id)){alert('Machine ID already exists');return}db.machines.push(f)}else db.machines[i]=f;save();closeModal();render('machines')}
+function addMaterial(){openModal('Add Material',form(field('Material Code','code')+field('Material Name','name')+field('Category','category','Raw Material','text',['Raw Material','Masterbatch','SFG','Component','Finished Goods','Packing Material'])+field('Unit of Measure','uom','KG','text',['KG','PCS','LTR','BOX'])+field('Opening Stock','stock','0','number')+field('Location','location','RM Store','text',['RM Store','WIP Store','SFG Store','FG Warehouse','Packing Store']),'saveMaterial(event)'))}
+function editMaterial(i){let m=db.materials[i];openModal('Edit Material',form(field('Material Code','code',m.code)+field('Material Name','name',m.name)+field('Category','category',m.category,'text',['Raw Material','Masterbatch','SFG','Component','Finished Goods','Packing Material'])+field('Unit of Measure','uom',m.uom,'text',['KG','PCS','LTR','BOX'])+field('Stock','stock',m.stock,'number')+field('Location','location',m.location),'saveMaterial(event,'+i+')'))}
+function saveMaterial(e,i){e.preventDefault();let f=Object.fromEntries(new FormData(e.target));f.stock=+f.stock;if(i===undefined){if(db.materials.some(m=>m.code===f.code)){alert('Material code already exists');return}db.materials.push(f)}else db.materials[i]=f;save();closeModal();render('materials')}
+function addBom(){openModal('Add BOM',form(field('Finished Product','product')+field('Stage','stage','Closure','text',['Closure','Wadding','Packing'])+`<div class="field full"><label>Components and quantities</label><input name="components" placeholder="Example: H200MA 0.025 KG + Masterbatch 0.001 KG" required></div>`,'saveBom'))}
+function saveBom(e){e.preventDefault();db.bom.push(Object.fromEntries(new FormData(e.target)));save();closeModal();render('bom')}
+function addOrder(){openModal('Create Work Order',form(field('Work Order Number','id','WO-'+Date.now())+field('Product','product','Outer Cap','text',['Outer Cap','Inner Cap','Finished Cap'])+field('Department','dept','Closure','text',['Closure','Wadding'])+field('Planned Quantity (PCS)','qty','10000','number')+field('Due Date','due',new Date().toISOString().slice(0,10),'date')+field('Machine (optional)','machine','','text',db.machines.map(m=>m.id)),'saveOrder(event)'))}
+function saveOrder(e){e.preventDefault();let f=Object.fromEntries(new FormData(e.target));f.qty=+f.qty;f.status='Open';db.orders.push(f);save();closeModal();render('workorders')}
+function viewOrder(i){let o=db.orders[i];openModal(o.id,`<p><b>Product:</b> ${esc(o.product)}</p><p><b>Department:</b> ${esc(o.dept)}</p><p><b>Planned quantity:</b> ${num(o.qty)}</p><p><b>Due:</b> ${esc(o.due)}</p><p><b>Status:</b> ${esc(o.status)}</p><p class="sub">Production posting and completion logic will be expanded in the next phase.</p>`)}
+function addTransfer(){let mats=db.materials.map(m=>m.code+' — '+m.name);openModal('Stock Receipt / Transfer',form(field('Material','material',mats[0],'text',mats)+field('Transaction Type','type','Receipt','text',['Receipt','Transfer'])+field('From Location','from','Supplier','text',['Supplier','RM Store','WIP Store','SFG Store','FG Warehouse','Packing Store'])+field('To Location','to','RM Store','text',['RM Store','WIP Store','SFG Store','FG Warehouse','Packing Store'])+field('Quantity','qty','100','number')+field('Reference / WO','ref','Opening / GRN'),'saveTransfer(event)'))}
+function saveTransfer(e){e.preventDefault();let f=Object.fromEntries(new FormData(e.target));f.qty=+f.qty;let m=db.materials.find(x=>x.code===f.material.split(' — ')[0]);if(!m){alert('Material not found');return}if(f.type==='Transfer'&&m.stock<f.qty){alert('Insufficient stock for transfer');return}if(f.type==='Receipt')m.stock+=f.qty;else {m.stock-=f.qty;let target=db.materials.find(x=>x.code===m.code&&x.location===f.to);if(target)target.stock+=f.qty;m.location=f.to}f.date=new Date().toISOString().slice(0,10);db.transfers.push(f);save();closeModal();render('stock')}
+function addProduction(){let woOpts=db.orders.map(o=>o.id);if(!woOpts.length){alert('Create a Work Order first.');return}openModal('Post Production Entry',form(field('Work Order','wo',woOpts[0],'text',woOpts)+field('Department','dept','Closure','text',['Closure','Wadding'])+field('Machine','machine',db.machines[0].id,'text',db.machines.map(m=>m.id))+field('Shift','shift','A','text',['A','B','C'])+field('Production Date','date',new Date().toISOString().slice(0,10),'date')+field('Total Output (PCS)','output','1000','number')+field('Rejection (PCS)','reject','10','number')+field('Rejection Reason','reason','Process rejection'),'saveProduction(event)'))}
+function saveProduction(e){e.preventDefault();let f=Object.fromEntries(new FormData(e.target));f.output=+f.output;f.reject=+f.reject;if(f.reject>f.output){alert('Rejection cannot exceed total output');return}f.good=f.output-f.reject;let wo=db.orders.find(o=>o.id===f.wo);if(wo){let already=db.entries.filter(x=>x.wo===wo.id).reduce((a,x)=>a+x.output,0);if(already+f.output>wo.qty&&!confirm('This entry exceeds the Work Order planned quantity. Continue?'))return;if(already+f.output>=wo.qty)wo.status='Completed';else wo.status='In Progress'}db.entries.push(f);save();closeModal();render('production')}
+function filterTable(id,q){let t=document.getElementById(id);if(!t)return;[...t.querySelectorAll('tbody tr')].forEach(r=>r.style.display=r.innerText.toLowerCase().includes(q.toLowerCase())?'':'none')}
+function filterDept(d){let t=document.getElementById('machineTable');[...t.querySelectorAll('tbody tr')].forEach(r=>r.style.display=(!d||r.cells[1].innerText===d)?'':'none')}
+function exportData(){let blob=new Blob([JSON.stringify(db,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='capman-demo-data.json';a.click();URL.revokeObjectURL(a.href)}
+function resetDemo(){if(confirm('Reset all demo transactions and restore the original machine/material master?')){db=JSON.parse(JSON.stringify(seed));save();render('reports')}}
+render();
+</script>
+</body>
+</html>
